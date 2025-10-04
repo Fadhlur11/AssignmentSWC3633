@@ -1,75 +1,52 @@
-﻿@model RecipeFinder.Models.MealResponse
-@{
-    ViewData["Title"] = "Find Recipes";
+﻿@{
+    ViewData["Title"] = "Home";
 }
 
-<style>
-    h2 {
-        color: #0d6efd;
-        font-weight: 700;
-    }
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold text-primary">🍳 Welcome to Recipe Finder!</h1>
+    <p class="lead mt-3">Discover and explore thousands of recipes from around the world — all powered by <strong>TheMealDB API</strong>.</p>
+</div>
 
-    .card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .card img {
-            border-top-left-radius: 0.75rem;
-            border-top-right-radius: 0.75rem;
-        }
-</style>
-
+<!-- 🔍 Search Section -->
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Find Your Favorite Recipes</h2>
-
-    <!-- Search Form -->
-    <form method="post" class="text-center mb-4">
+    <form method="post" asp-controller="Recipe" asp-action="Index" class="text-center mb-4">
         <div class="input-group input-group-lg w-75 mx-auto">
-            <input type="text" name="searchTerm" class="form-control" placeholder="Search for a meal (e.g., Chicken, Pasta, Egg)" required />
+            <input type="text" name="searchTerm" class="form-control" placeholder="Search recipes (e.g., chicken, pasta, beef)" required />
             <button class="btn btn-primary" type="submit">Search</button>
         </div>
     </form>
-
-    <!-- Display Error -->
-    @if (ViewBag.Error != null)
-    {
-        <div class="alert alert-warning text-center">@ViewBag.Error</div>
-    }
-
-    <!-- Display Results -->
-    @if (Model != null && Model.meals != null)
-    {
-        <div class="row">
-            @foreach (var meal in Model.meals)
-            {
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                        <img src="@meal.strMealThumb" class="card-img-top" alt="@meal.strMeal" />
-                        <div class="card-body">
-                            <h5 class="card-title text-primary fw-bold">@meal.strMeal</h5>
-                            <p class="card-text mb-1"><strong>Category:</strong> @meal.strCategory</p>
-                            <p class="card-text mb-1"><strong>Area:</strong> @meal.strArea</p>
-                            <a asp-controller="Recipe" asp-action="Details" asp-route-id="@meal.idMeal" class="btn btn-primary btn-sm mt-2">
-                                View Details
-                            </a>
-                            <a href="@meal.strYoutube" target="_blank" class="btn btn-outline-danger btn-sm mt-2 ms-2">
-                                YouTube
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    }
-    else if (Model != null && Model.meals == null)
-    {
-        <div class="text-center text-muted">
-            <p>No recipes found. Try another keyword!</p>
-        </div>
-    }
 </div>
+
+<hr class="my-5" />
+
+<section class="mt-5">
+    <h3 class="text-center text-secondary mb-4">App Overview</h3>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">🔍 Find Recipes</h5>
+                    <p class="card-text">Search for meals by name or ingredient and get instant results with images, details, and video tutorials.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">💡 Easy to Use</h5>
+                    <p class="card-text">Simple, clean interface built using ASP.NET Core MVC and Bootswatch Zephyr theme for a modern look.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">⚙️ API Integration</h5>
+                    <p class="card-text">Demonstrates third-party API consumption with real-time data from TheMealDB using HttpClient and JSON.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
