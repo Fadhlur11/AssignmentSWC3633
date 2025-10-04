@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<!-- Style Fixes for Alignment and Readability -->
+<style>
+    h3.text-secondary {
+        color: #0d6efd !important; /* Zephyr primary blue */
+        font-weight: 600;
+    }
+
+    .list-group-item {
+        background-color: #ffffff !important;
+    }
+
+    .about-box {
+        min-height: 100%; /* keeps both columns same height visually */
+    }
+
+    .card-body p {
+        margin-bottom: 0.25rem;
+    }
+</style>
+
+<div class="container mt-5">
+    <!-- Title -->
+    <h1 class="text-center text-primary fw-bold mb-5">About Us</h1>
+
+    <!-- Two Column Layout -->
+    <div class="row align-items-stretch mb-5">
+        <!-- Left: Company Overview -->
+        <div class="col-md-6 about-box">
+            <h3 class="text-secondary mb-3">About Recipe Finder</h3>
+            <p class="lead">
+                <strong>Recipe Finder</strong> is a user-friendly web application that helps users
+                discover and explore recipes from around the world. It provides easy access to
+                meal ideas with clear ingredients and instructions.
+            </p>
+            <p>
+                The platform serves as a digital companion for cooking inspiration, offering meals
+                from various cuisines — whether you’re looking for something traditional or new to try.
+            </p>
+        </div>
+
+        <!-- Right: Objectives -->
+        <div class="col-md-6 about-box">
+            <h3 class="text-secondary mb-3">Objectives</h3>
+            <ul class="list-group list-group-flush shadow-sm rounded">
+                <li class="list-group-item">1. To build a simple and efficient recipe search platform.</li>
+                <li class="list-group-item">2. To make cooking ideas easily accessible for everyone.</li>
+                <li class="list-group-item">3. To provide accurate recipe data through API integration.</li>
+                <li class="list-group-item">4. To ensure a modern, responsive, and user-friendly design.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- Bottom: Team Members -->
+    <div class="text-center">
+        <h3 class="text-secondary mb-4">Team Members</h3>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary">Fadhlur Rahman</h5>
+                        <p class="card-text text-muted">Front-End Developer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary">Fauzan Wasim</h5>
+                        <p class="card-text text-muted">Back-End Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5" />
+
+    <!-- Footer -->
+    <div class="text-center mt-4">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary mb-3">Back to Home</a>
+        <p class="text-muted mb-0">
+            © 2025 Recipe Finder | Developed by Fadhlur Rahman & Fauzan Wasim
+        </p>
+    </div>
+</div>
