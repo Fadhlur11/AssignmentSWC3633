@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold text-primary">🍳 Welcome to Recipe Finder!</h1>
+    <p class="lead mt-3">Discover and explore thousands of recipes from around the world — all powered by <strong>TheMealDB API</strong>.</p>
+</div>
+
+<!-- 🔍 Search Section -->
+<div class="container mt-5">
+    <form method="post" asp-controller="Recipe" asp-action="Index" class="text-center mb-4">
+        <div class="input-group input-group-lg w-75 mx-auto">
+            <input type="text" name="searchTerm" class="form-control" placeholder="Search recipes (e.g., chicken, pasta, beef)" required />
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+<hr class="my-5" />
+
+<section class="mt-5">
+    <h3 class="text-center text-secondary mb-4">App Overview</h3>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">🔍 Find Recipes</h5>
+                    <p class="card-text">Search for meals by name or ingredient and get instant results with images, details, and video tutorials.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">💡 Easy to Use</h5>
+                    <p class="card-text">Simple, clean interface built using ASP.NET Core MVC and Bootswatch Zephyr theme for a modern look.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">⚙️ API Integration</h5>
+                    <p class="card-text">Demonstrates third-party API consumption with real-time data from TheMealDB using HttpClient and JSON.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
